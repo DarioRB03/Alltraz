@@ -1,3 +1,7 @@
+package sample;
+
+import java.time.LocalDateTime;
+
 public class Producto {
 
     private int id_producto;
