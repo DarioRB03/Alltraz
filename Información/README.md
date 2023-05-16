@@ -1,2 +1,0 @@
-# Alltraz
-Proyecto integrado
