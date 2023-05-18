@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootPane" prefHeight="640.0" prefWidth="943.0" style="-fx-background-color: #f6f7fc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.alltraz2.RegistroProducto">
+    <children>
+        <AnchorPane layoutX="359.0" prefHeight="587.0" prefWidth="593.0" style="-fx-background-color: #a1cffb;">
+            <children>
+                <Line endY="562.0" layoutY="79.0" startY="-79.0" />
+                <ImageView fitHeight="337.0" fitWidth="395.0" layoutX="92.0" layoutY="153.0" opacity="0.11" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Miproyecto.png" />
+                    </image>
+                </ImageView>
+                <Text layoutX="187.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AÑADIR PRODUCTO">
+                    <font>
+                        <Font name="Monospaced Regular" size="22.0" />
+                    </font>
+                </Text>
+            <Text layoutX="341.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de cosecha" wrappingWidth="198.0322265625">
+               <font>
+                  <Font name="Monospaced Regular" size="17.0" />
+               </font>
+            </Text>
+            <Text layoutX="38.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de plantación" wrappingWidth="198.0322265625">
+               <font>
+                  <Font name="Monospaced Regular" size="17.0" />
+               </font>
+            </Text>
+            <Text layoutX="38.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha llegada almacén" wrappingWidth="251.0322265625">
+               <font>
+                  <Font name="Monospaced Regular" size="17.0" />
+               </font>
+            </Text>
+            <Text layoutX="341.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha salida almacén" wrappingWidth="251.0322265625">
+               <font>
+                  <Font name="Monospaced Regular" size="17.0" />
+               </font>
+            </Text>
+            <Text layoutX="38.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lote del producto" wrappingWidth="251.0322265625">
+               <font>
+                  <Font name="Monospaced Regular" size="17.0" />
+               </font>
+            </Text>
+            <TextField fx:id="fLtPr" layoutX="38.0" layoutY="256.0" prefHeight="25.0" prefWidth="198.0" />
+            <Text layoutX="38.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Características" wrappingWidth="251.0322265625">
+               <font>
+                  <Font name="Monospaced Regular" size="17.0" />
+               </font>
+            </Text>
+            <TextArea fx:id="prodcar" layoutX="38.0" layoutY="321.0" prefHeight="114.0" prefWidth="503.0" />
+            <Text layoutX="161.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Añadir imagen del producto" wrappingWidth="272.0322265625">
+               <font>
+                  <Font name="Monospaced Regular" size="17.0" />
+               </font>
+            </Text>
+            <Button fx:id="botonSubirImagen" layoutX="217.0" layoutY="490.0" mnemonicParsing="false" onAction="#onBotonSubirImagen" prefHeight="40.0" prefWidth="159.0" text="Subir imagen">
+               <font>
+                  <Font name="Monospaced Regular" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="botonRegistrarProducto" layoutX="188.0" layoutY="551.0" mnemonicParsing="false" onAction="#onBotonRegistrarProducto" prefHeight="58.0" prefWidth="219.0" text="Registrar producto">
+               <font>
+                  <Font name="Monospaced Regular" size="18.0" />
+               </font>
+            </Button>
+            <DatePicker fx:id="PickPlantacion" layoutX="38.0" layoutY="100.0" onAction="#onPickPlantacion" />
+            <DatePicker fx:id="PickCosecha" layoutX="341.0" layoutY="100.0" onAction="#onPickCosecha" />
+            <DatePicker fx:id="PickLlALm" layoutX="38.0" layoutY="194.0" onAction="#onPickLlAlm" />
+            <DatePicker fx:id="PickSalida" layoutX="341.0" layoutY="194.0" onAction="#onPickSalida" />
+            </children>
+        </AnchorPane>
+        <ImageView fitHeight="305.0" fitWidth="375.0" layoutX="32.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Icono.jpeg" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>
