@@ -1,5 +1,6 @@
 package sample;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Producto {
@@ -7,13 +8,12 @@ public class Producto {
     private int id_producto;
     private String lote;
     private String caracteristicas;
-    private LocalDateTime fsal;
-    private LocalDateTime flleg;
-    private LocalDateTime fcos;
-    private LocalDateTime fplant;
+    private LocalDate fsal;
+    private LocalDate flleg;
+    private LocalDate fcos;
+    private LocalDate fplant;
 
-    private Producto(){}
-    public Producto(int id_producto, String lote, String caracteristicas, LocalDateTime fsal, LocalDateTime flleg, LocalDateTime fcos, LocalDateTime fplant) {
+    public Producto(String lote, String caracteristicas, LocalDate fsal, LocalDate flleg, LocalDate fcos, LocalDate fplant) {
         this.id_producto = id_producto;
         this.lote = lote;
         this.caracteristicas = caracteristicas;
