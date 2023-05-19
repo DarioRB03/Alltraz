@@ -47,35 +47,35 @@ public class Producto {
         this.caracteristicas = caracteristicas;
     }
 
-    public LocalDateTime getFsal() {
+    public LocalDate getFsal() {
         return fsal;
     }
 
-    public void setFsal(LocalDateTime fsal) {
+    public void setFsal(LocalDate fsal) {
         this.fsal = fsal;
     }
 
-    public LocalDateTime getFlleg() {
+    public LocalDate getFlleg() {
         return flleg;
     }
 
-    public void setFlleg(LocalDateTime flleg) {
+    public void setFlleg(LocalDate flleg) {
         this.flleg = flleg;
     }
 
-    public LocalDateTime getFcos() {
+    public LocalDate getFcos() {
         return fcos;
     }
 
-    public void setFcos(LocalDateTime fcos) {
+    public void setFcos(LocalDate fcos) {
         this.fcos = fcos;
     }
 
-    public LocalDateTime getFplant() {
+    public LocalDate getFplant() {
         return fplant;
     }
 
-    public void setFplant(LocalDateTime fplant) {
+    public void setFplant(LocalDate fplant) {
         this.fplant = fplant;
     }
 }

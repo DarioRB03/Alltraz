@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootPane" prefHeight="502.0" prefWidth="802.0" style="-fx-background-color: #f6f7fc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.alltraz2.InicioSesionCliente">
+   <children>
+      <AnchorPane layoutX="359.0" prefHeight="530.0" prefWidth="447.0" style="-fx-background-color: #a1cffb;">
+         <children>
+            <Button fx:id="click_atras" layoutX="375.0" layoutY="456.0" mnemonicParsing="false" onAction="#click_atras" text="Atrás" />
+            <Line endY="436.0" layoutY="79.0" startY="-79.0" />
+            <ImageView fitHeight="337.0" fitWidth="395.0" layoutX="24.0" layoutY="90.0" opacity="0.11" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Miproyecto.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="178.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
+               <font>
+                  <Font name="Monospaced Regular" size="17.0" />
+               </font>
+            </Text>
+            <TextField fx:id="getUser" layoutX="46.0" layoutY="168.0" prefHeight="25.0" prefWidth="355.0" />
+            <Text layoutX="178.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+               <font>
+                  <Font name="Monospaced Regular" size="17.0" />
+               </font>
+            </Text>
+            <TextField fx:id="getPassword" layoutX="46.0" layoutY="282.0" prefHeight="25.0" prefWidth="355.0" />
+            <Button fx:id="click_InicioSesion" layoutX="167.0" layoutY="346.0" mnemonicParsing="false" onAction="#click_InicioSesion" style="-fx-background-color: white;" text="Inicia Sesión">
+               <font>
+                  <Font name="Monospaced Regular" size="12.0" />
+               </font>
+            </Button>
+            <Text layoutX="92.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INICIO DE SESION">
+               <font>
+                  <Font name="Monospaced Regular" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="305.0" fitWidth="375.0" layoutX="32.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Icono.jpeg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
