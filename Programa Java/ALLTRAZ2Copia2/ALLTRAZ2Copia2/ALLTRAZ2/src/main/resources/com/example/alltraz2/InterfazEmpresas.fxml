@@ -1,56 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="598.0" prefWidth="875.0" style="-fx-background-color: #a2cffb;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.alltraz2.InterfazEmpresas">
    <children>
-      <ImageView fitHeight="51.0" fitWidth="42.0" layoutX="810.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="601.0" fitWidth="881.0" layoutX="-6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@fondoDerecha.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="471.0" fitWidth="373.0" layoutX="502.0" layoutY="249.0" opacity="0.46" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Alltraz__1_-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Line endX="33.199981689453125" endY="509.29290771484375" layoutX="362.0" layoutY="90.0" startX="33.199981689453125" startY="-89.99999237060547" />
+      <ImageView fitHeight="208.0" fitWidth="373.0" layoutX="14.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mercadona_integration.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="232.0" fitWidth="300.0" layoutX="507.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@boton-web.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="232.0" fitWidth="300.0" layoutX="507.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@boton-web.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="542.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AÑADIR PRODUCTO" wrappingWidth="146.49658203125">
+         <font>
+            <Font name="Agency FB" size="25.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="536.0" layoutY="403.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTIFICAR PRODUCTO" wrappingWidth="173.49658203125">
+         <font>
+            <Font name="Agency FB" size="25.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="86.0" fitWidth="44.0" layoutX="700.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mas.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="51.0" fitWidth="60.0" layoutX="709.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@usuario.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="64.0" fitWidth="57.0" layoutX="751.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@EMOJI.png" />
          </image>
       </ImageView>
-      <Line endX="33.199981689453125" endY="509.29290771484375" layoutX="362.0" layoutY="90.0" startX="33.199981689453125" startY="-89.99999237060547" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="108.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Miproyecto.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="NombreEmpresa" alignment="CENTER" layoutX="40.0" layoutY="357.0" prefHeight="51.0" prefWidth="313.0" style="-fx-background-color: transparent;" text="MERCADONA">
+      <Text fill="WHITE" layoutX="478.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¿QUE DESEA HACER?">
          <font>
-            <Font name="Monospaced Regular" size="47.0" />
+            <Font name="Agency FB" size="45.0" />
          </font>
-      </TextField>
-      <Button layoutX="499.0" layoutY="214.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="255.0" text="Añadir Producto">
-         <effect>
-            <Reflection />
-         </effect>
+      </Text>
+      <Button layoutX="506.0" layoutY="365.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="238.0" style="-fx-background-color: tranparent;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <Button fx:id="NotificarProducto" layoutX="499.0" layoutY="375.0" mnemonicParsing="false" onAction="#click_notificar" prefHeight="51.0" prefWidth="255.0" text="Notificar un producto">
-         <effect>
-            <Reflection fraction="1.0" topOpacity="0.54" />
-         </effect>
+      <Button layoutX="506.0" layoutY="172.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="238.0" style="-fx-background-color: tranparent;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <ImageView fitHeight="51.0" fitWidth="74.0" layoutX="729.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@+.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="76.0" fitWidth="42.0" layoutX="733.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Notificar.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="60.0" fitWidth="438.0" layoutX="429.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@_QUE_DESEA_HACER__4_-removebg-preview.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

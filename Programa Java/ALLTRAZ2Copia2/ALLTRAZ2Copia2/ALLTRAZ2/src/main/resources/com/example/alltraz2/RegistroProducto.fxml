@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,78 +13,168 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="rootPane" prefHeight="640.0" prefWidth="943.0" style="-fx-background-color: #f6f7fc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.alltraz2.RegistroProducto">
+<AnchorPane fx:id="rootPane" prefHeight="598.0" prefWidth="875.0" style="-fx-background-color: #f6f7fc;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.alltraz2.RegistroProducto">
     <children>
-        <AnchorPane layoutX="359.0" prefHeight="587.0" prefWidth="593.0" style="-fx-background-color: #a1cffb;">
-            <children>
-                <Line endY="562.0" layoutY="79.0" startY="-79.0" />
-                <ImageView fitHeight="337.0" fitWidth="395.0" layoutX="92.0" layoutY="153.0" opacity="0.11" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@Miproyecto.png" />
-                    </image>
-                </ImageView>
-                <Text layoutX="187.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AÑADIR PRODUCTO">
-                    <font>
-                        <Font name="Monospaced Regular" size="22.0" />
-                    </font>
-                </Text>
-            <Text layoutX="341.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de cosecha" wrappingWidth="198.0322265625">
-               <font>
-                  <Font name="Monospaced Regular" size="17.0" />
-               </font>
-            </Text>
-            <Text layoutX="38.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha de plantación" wrappingWidth="198.0322265625">
-               <font>
-                  <Font name="Monospaced Regular" size="17.0" />
-               </font>
-            </Text>
-            <Text layoutX="38.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha llegada almacén" wrappingWidth="251.0322265625">
-               <font>
-                  <Font name="Monospaced Regular" size="17.0" />
-               </font>
-            </Text>
-            <Text layoutX="341.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha salida almacén" wrappingWidth="251.0322265625">
-               <font>
-                  <Font name="Monospaced Regular" size="17.0" />
-               </font>
-            </Text>
-            <Text layoutX="38.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lote del producto" wrappingWidth="251.0322265625">
-               <font>
-                  <Font name="Monospaced Regular" size="17.0" />
-               </font>
-            </Text>
-            <TextField fx:id="fLtPr" layoutX="38.0" layoutY="256.0" prefHeight="25.0" prefWidth="198.0" />
-            <Text layoutX="38.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Características" wrappingWidth="251.0322265625">
-               <font>
-                  <Font name="Monospaced Regular" size="17.0" />
-               </font>
-            </Text>
-            <TextArea fx:id="prodcar" layoutX="38.0" layoutY="321.0" prefHeight="114.0" prefWidth="503.0" />
-            <Text layoutX="161.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Añadir imagen del producto" wrappingWidth="272.0322265625">
-               <font>
-                  <Font name="Monospaced Regular" size="17.0" />
-               </font>
-            </Text>
-            <Button fx:id="botonSubirImagen" layoutX="217.0" layoutY="490.0" mnemonicParsing="false" onAction="#onBotonSubirImagen" prefHeight="40.0" prefWidth="159.0" text="Subir imagen">
-               <font>
-                  <Font name="Monospaced Regular" size="17.0" />
-               </font>
-            </Button>
-            <Button fx:id="botonRegistrarProducto" layoutX="188.0" layoutY="551.0" mnemonicParsing="false" onAction="#onBotonRegistrarProducto" prefHeight="58.0" prefWidth="219.0" text="Registrar producto">
-               <font>
-                  <Font name="Monospaced Regular" size="18.0" />
-               </font>
-            </Button>
-            <DatePicker fx:id="PickPlantacion" layoutX="38.0" layoutY="100.0" onAction="#onPickPlantacion" />
-            <DatePicker fx:id="PickCosecha" layoutX="341.0" layoutY="100.0" onAction="#onPickCosecha" />
-            <DatePicker fx:id="PickLlALm" layoutX="38.0" layoutY="194.0" onAction="#onPickLlAlm" />
-            <DatePicker fx:id="PickSalida" layoutX="341.0" layoutY="194.0" onAction="#onPickSalida" />
-            </children>
-        </AnchorPane>
-        <ImageView fitHeight="305.0" fitWidth="375.0" layoutX="32.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@Icono.jpeg" />
-            </image>
-        </ImageView>
+      <Label layoutX="298.0" layoutY="564.0" prefHeight="31.0" prefWidth="193.0" />
+      <ImageView fitHeight="642.0" fitWidth="986.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@fondoDerecha.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="280.0" fitWidth="405.0" layoutX="641.0" layoutY="362.0" opacity="0.38" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Alltraz__1_-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <DatePicker layoutX="95.0" layoutY="120.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </DatePicker>
+      <DatePicker layoutX="623.0" layoutY="120.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </DatePicker>
+      <DatePicker layoutX="623.0" layoutY="217.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </DatePicker>
+      <DatePicker layoutX="95.0" layoutY="217.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </DatePicker>
+      <Line endX="159.0" layoutX="434.0" layoutY="133.0" startX="-135.0" />
+      <Line endX="281.0" endY="-123.0" layoutX="561.0" layoutY="293.0" startX="281.0" startY="-164.0" />
+      <Line endX="100.0" layoutX="737.0" layoutY="128.0" startX="71.0" />
+      <Line endX="159.0" layoutX="677.0" layoutY="170.0" startX="-502.0" />
+      <Line endX="-95.0" layoutX="262.0" layoutY="201.0" startX="-95.0" startY="-30.0" />
+      <Line endX="159.0" layoutX="434.0" layoutY="229.0" startX="-135.0" />
+      <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="324.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@semillas.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="62.0" fitWidth="55.0" layoutX="507.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cosecha.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="61.0" fitWidth="55.0" layoutX="311.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ruta.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="122.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FECHA PLANTACION">
+         <font>
+            <Font name="Agency FB" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="659.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FECHA COSECHA">
+         <font>
+            <Font name="Agency FB" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="95.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FECHA LLEGADA ALMACEN">
+         <font>
+            <Font name="Agency FB" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="636.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FECHA SALIDA ALMACEN">
+         <font>
+            <Font name="Agency FB" size="20.0" />
+         </font>
+      </Text>
+      <Line endX="100.0" layoutX="737.0" layoutY="229.0" startX="71.0" />
+      <Line endX="281.0" endY="-81.0" layoutX="560.0" layoutY="394.0" startX="281.0" startY="-164.0" />
+      <Line endX="159.0" layoutX="677.0" layoutY="313.0" startX="-376.0" />
+      <TextField layoutX="93.0" layoutY="301.0" prefHeight="25.0" prefWidth="174.0">
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="534.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@envase.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="122.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NUMERO DE LOTE">
+         <font>
+            <Font name="Agency FB" size="20.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="55.0" fitWidth="44.0" layoutX="311.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@lote.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="95.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IMAGEN DEL PRODUCTO:">
+         <font>
+            <Font name="Agency FB" size="20.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="55.0" fitWidth="44.0" layoutX="253.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@mas.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="179.0" fitWidth="210.0" layoutX="457.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@boton-web.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="479.0" layoutY="492.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTAR PRODUCTO:" wrappingWidth="134.58984375">
+         <font>
+            <Font name="Agency FB" size="20.0" />
+         </font>
+      </Text>
+      <Button layoutX="453.0" layoutY="462.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="187.0" style="-fx-background-color: transparent;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="90.0" fitWidth="217.0" layoutX="286.0" layoutY="557.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@minimizar.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <Button layoutX="248.0" layoutY="462.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" style="-fx-background-color: transparent;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField alignment="TOP_LEFT" blendMode="COLOR_BURN" depthTest="DISABLE" layoutX="383.0" layoutY="362.0" prefHeight="90.0" prefWidth="381.0" promptText="Caracteristicas">
+         <font>
+            <Font name="Agency FB" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <effect>
+            <DropShadow />
+         </effect>
+      </TextField>
+      <Line endX="-95.0" layoutX="269.0" layoutY="399.0" startX="-95.0" startY="-30.0" />
+      <Line endX="53.0" layoutX="312.0" layoutY="408.0" startX="-135.0" />
     </children>
 </AnchorPane>

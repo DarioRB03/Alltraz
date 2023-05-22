@@ -27,7 +27,7 @@ public class InicioSesionCliente {
     @FXML
     private Button Registrarse;
 
-    @FXML
+    @Deprecated
     public void click_InicioSesion(ActionEvent actionEvent) {
         String nombre = getUser.getText();
         String password = getPassword.getText();
@@ -35,7 +35,7 @@ public class InicioSesionCliente {
     }
 
 
-    @FXML
+    @Deprecated
     public void click_InicioSesionEmpresa(ActionEvent actionEvent) {
     }
 
