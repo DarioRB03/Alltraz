@@ -27,6 +27,11 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `Empresa`
 --
+CREATE DATABASE Alltraz;
+
+USE Alltraz;
+
+
 
 CREATE TABLE `Empresa` (
   `Id_empresa` int(11) NOT NULL,
