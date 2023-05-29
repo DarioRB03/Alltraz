@@ -27,7 +27,7 @@
             <Image url="@../Images/IconoHorizontal-removebg-preview.png" />
          </image>
       </ImageView>
-      <TextField fx:id="getUser" alignment="CENTER" layoutX="275.0" layoutY="221.0" prefHeight="26.0" prefWidth="324.0">
+      <TextField fx:id="txtUsername" alignment="CENTER" layoutX="275.0" layoutY="221.0" prefHeight="26.0" prefWidth="324.0">
          <effect>
             <DropShadow />
          </effect>
@@ -39,7 +39,7 @@
             <Font name="Agency FB" size="25.0" />
          </font>
       </Text>
-      <TextField fx:id="getPassword" alignment="CENTER" layoutX="276.0" layoutY="392.0" prefHeight="26.0" prefWidth="324.0">
+      <TextField fx:id="txtPassword" alignment="CENTER" layoutX="276.0" layoutY="392.0" prefHeight="26.0" prefWidth="324.0">
          <effect>
             <DropShadow />
          </effect>
@@ -85,7 +85,7 @@
             <Font name="Agency FB" size="25.0" />
          </font>
       </Text>
-      <TextField fx:id="getUser1" alignment="CENTER" layoutX="275.0" layoutY="307.0" prefHeight="26.0" prefWidth="324.0">
+      <TextField fx:id="txtCorreo" alignment="CENTER" layoutX="275.0" layoutY="307.0" prefHeight="26.0" prefWidth="324.0">
          <effect>
             <DropShadow />
          </effect>

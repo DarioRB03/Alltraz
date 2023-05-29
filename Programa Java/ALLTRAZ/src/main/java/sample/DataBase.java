@@ -13,7 +13,7 @@ public class DataBase {
         if(conexion==null){
             try {
                 DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-                conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/alltraz", "root", "");
+                conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/alltraz", "root", "12345");
 
             }catch (SQLException e){
                 e.printStackTrace();

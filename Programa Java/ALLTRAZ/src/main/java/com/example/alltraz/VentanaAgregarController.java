@@ -11,12 +11,20 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.Window;
+import sample.Cliente;
+import sample.DataBase;
 import sample.Empresa;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.security.cert.PolicyNode;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -35,10 +43,15 @@ public class VentanaAgregarController implements Initializable {
     @javafx.fxml.FXML
     private Button ATRAS;
     @javafx.fxml.FXML
+    private TextField txtRuta;
+    @javafx.fxml.FXML
+    private Button RUTA;
+    @javafx.fxml.FXML
     private AnchorPane rootPane;
 
     private Empresa empresa = new Empresa();
     private ObservableList<Empresa> empresas = FXCollections.observableArrayList();
+
 
     public void initAtributes(ObservableList<Empresa> empresas,Empresa empresa){
         this.empresas=empresas;
@@ -51,52 +64,83 @@ public class VentanaAgregarController implements Initializable {
 
     @javafx.fxml.FXML
     public void btn_LISTO(ActionEvent actionEvent) {
-        Integer Id = Integer.parseInt(this.ID.getText());
-        String Cif = this.CIF.getText();
-        String tipo = "Empresa";
-        String user = this.USERNAME.getText();
-        String pass = this.PASSWORD.getText();
+        String user = USERNAME.getText().trim();
+        String nombreEmpresa = ID.getText().trim();
+        String cif = CIF.getText().trim();
+        String pass = PASSWORD.getText().trim();
+        String ruta = txtRuta.getText().trim();
 
-        Empresa e = new Empresa(Id,tipo,Cif,user,pass);
-
-        if (!empresas.contains(e)){
-            if(this.empresa!=null){
-            this.empresa=e;
-
-            this.empresa.setID(Id);
-            this.empresa.setTipo("Empresa");
-            this.empresa.setCif(Cif);
-            this.empresa.setUsername_empresa(user);
-            this.empresa.setPassword_empresa(pass);
-
-            Alert a = new Alert(Alert.AlertType.INFORMATION);
-            a.setHeaderText(null);
-            a.setTitle("Informacion");
-            a.setContentText("Se ha añadido correctamente");
-            a.showAndWait();
-
-            Stage stage = (Stage) this.LISTO.getScene().getWindow();
-            stage.close();
-            }
-        }else{
+        if (user.equals("") || pass.equals("") || nombreEmpresa.equals("") || cif.equals("") || ruta.equals("")) {
             Alert a = new Alert(Alert.AlertType.ERROR);
             a.setHeaderText(null);
             a.setTitle("Error");
-            a.setContentText("La empresa ya existe");
+            a.setContentText("Falta algun campo");
             a.showAndWait();
-        }
+        } else {
+            DataBase db = new DataBase();
+            Connection connexion = db.obtenerConexion();
+
+
+            String consulta = "INSERT INTO empresa (Cif,Contraseña,Icono,NombreEmpresa) VALUES (?,?,?,?)";
+            Empresa empresa = new Empresa();
+
+            try {
+                PreparedStatement st = connexion.prepareStatement(consulta);
+                st.setString(1,cif);
+                st.setString(2,pass);
+                st.setString(3,ruta);
+                st.setString(3,nombreEmpresa);
+
+                int filasNuevas = st.executeUpdate();
+
+                if(filasNuevas==1){
+                    Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+                    a.setHeaderText(null);
+                    a.setTitle("¡Ya tienes cuenta!");
+                    a.setContentText("Ahora inicia sesion para entrar en nuestra aplicacion");
+                    a.showAndWait();
+                }
+
+                st.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+
     }
+
+}
 
     @javafx.fxml.FXML
     public void click_ATRAS(ActionEvent actionEvent) {
-        try {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("ADMIN.fxml"));
-            this.rootPane.getChildren().setAll(pane);
-
-        } catch (IOException ex) {
-            Logger.getLogger(com.example.alltraz.HelloController.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
+
+    @javafx.fxml.FXML
+    public void btn_Ruta(ActionEvent actionEvent) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Selecciona archivo");
+
+        // Set initial directory (optional)
+        fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+
+        // Add file extension filters (optional)
+        FileChooser.ExtensionFilter imageFilter = new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif");
+        fileChooser.getExtensionFilters().addAll( imageFilter);
+
+        // Show the file chooser dialog
+        Window primaryStage = null;
+        File selectedFile = fileChooser.showOpenDialog(primaryStage);
+
+        if (selectedFile != null) {
+            // Process the selected file
+            System.out.println("Selected file: " + selectedFile.getAbsolutePath());
+        } else {
+            System.out.println("No file selected.");
+        }
+
+        txtRuta.setText(String.valueOf(selectedFile));
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

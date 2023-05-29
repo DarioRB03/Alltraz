@@ -78,7 +78,7 @@ public class AdminController {
     @javafx.fxml.FXML
     public void agregar_persona(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("VentanaAgregar.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("VentanaAgregar-View.fxml"));
             Parent root = loader.load();
 
             VentanaAgregarController controlador = loader.getController();

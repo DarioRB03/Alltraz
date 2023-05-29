@@ -64,7 +64,7 @@ public class InicioSesionClienteController implements Initializable {
             Cliente cliente;
 
             try {
-                Statement st = connexion.createStatement();
+                Statement st =  connexion.createStatement();
                 ResultSet rs = st.executeQuery(consulta);
 
                 if (!rs.next()) {
@@ -85,6 +85,9 @@ public class InicioSesionClienteController implements Initializable {
                     a.setTitle("Aviso");
                     a.setContentText("Login existoso \n"+cliente.mostrarUsuario());
                     a.showAndWait();
+
+                    ventanaInformacionProducto();
+
                 }
                 rs.close();
                 st.close();
@@ -94,6 +97,20 @@ public class InicioSesionClienteController implements Initializable {
         }
     }
 
+    public void ventanaInformacionProducto(){
+        try {
+            Parent pane = FXMLLoader.load(getClass().getResource("InformacionProducto-View.fxml"));
+
+            Scene scene = new Scene(pane);
+
+            Stage stage = (Stage) Registrarse.getScene().getWindow();
+
+            stage.setScene(scene);
+
+        } catch (IOException ex) {
+            Logger.getLogger(com.example.alltraz.HelloController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     @FXML
     public void click_Registrarse(ActionEvent actionEvent) {
         try {

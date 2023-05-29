@@ -15,7 +15,12 @@ public class Empresa {
 
     public Empresa(){}
 
-    public Empresa(Integer ID,String tipo,String cif, String username_empresa, String password_empresa) {
+    public Empresa(String cif, String password_empresa) {
+        this.cif = cif;
+        this.password_empresa = password_empresa;
+    }
+
+    public Empresa(Integer ID, String tipo, String cif, String username_empresa, String password_empresa) {
         this.ID = ID;
         this.tipo = tipo;
         this.cif = cif;

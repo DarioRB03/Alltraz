@@ -62,12 +62,12 @@
             <Font name="Agency FB" size="25.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="275.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subir el logo de la empresa:">
+      <Text fill="WHITE" layoutX="275.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subir el logo de la empresa:">
          <font>
             <Font name="Agency FB" size="25.0" />
          </font>
       </Text>
-      <ImageView fitHeight="50.0" fitWidth="43.0" layoutX="518.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="50.0" fitWidth="43.0" layoutX="518.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Images/mas.png" />
          </image>
@@ -87,7 +87,7 @@
             <Image url="@../Images/flecha-hacia-izq.png" />
          </image>
       </ImageView>
-      <Button fx:id="atras1" layoutX="512.0" layoutY="407.0" mnemonicParsing="false" onAction="#click_atras" prefHeight="49.0" prefWidth="56.0" style="-fx-background-color: transparent;">
+      <Button fx:id="atras1" layoutX="512.0" layoutY="421.0" mnemonicParsing="false" onAction="#click_atras" prefHeight="49.0" prefWidth="56.0" style="-fx-background-color: transparent;">
          <font>
             <Font size="19.0" />
          </font>
@@ -95,5 +95,11 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <ImageView fitHeight="56.0" fitWidth="71.0" layoutX="410.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Images/flecha-correcta.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="inicioSesion" layoutX="409.0" layoutY="367.0" mnemonicParsing="false" onAction="#click_InicioSesionEmpresa" prefHeight="56.0" prefWidth="56.0" style="-fx-background-color: transparent;" />
    </children>
 </AnchorPane>
