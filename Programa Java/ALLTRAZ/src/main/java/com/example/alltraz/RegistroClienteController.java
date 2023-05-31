@@ -6,8 +6,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import sample.Cliente;
-import sample.DataBase;
+import com.example.model.Cliente;
+import com.example.model.DataBase;
 
 import java.io.IOException;
 import java.sql.*;

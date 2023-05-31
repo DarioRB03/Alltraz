@@ -19,7 +19,7 @@
             <Image url="@../Images/degradado%20centro.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="txFiltrarEmpresa" blendMode="COLOR_BURN" layoutX="240.0" layoutY="146.0" onKeyReleased="#filtrarEmpresa">
+      <TextField blendMode="COLOR_BURN" layoutX="240.0" layoutY="146.0">
          <effect>
             <DropShadow />
          </effect>
@@ -27,7 +27,7 @@
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <TextField fx:id="txFiltrarCliente" blendMode="COLOR_BURN" layoutX="610.0" layoutY="146.0" onKeyReleased="#filtrarCliente">
+      <TextField blendMode="COLOR_BURN" layoutX="610.0" layoutY="146.0">
          <effect>
             <DropShadow />
          </effect>
@@ -85,7 +85,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="agregar" layoutX="95.0" layoutY="488.0" mnemonicParsing="false" onAction="#agregar_persona" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="agregar" layoutX="95.0" layoutY="488.0" mnemonicParsing="false" onAction="#agregar_persona" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: transparent;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Button fx:id="eliminar" layoutX="621.0" layoutY="493.0" mnemonicParsing="false" onAction="#eliminar_persona" prefHeight="44.0" prefWidth="160.0" style="-fx-background-color: transparent;">
          <cursor>
             <Cursor fx:constant="HAND" />

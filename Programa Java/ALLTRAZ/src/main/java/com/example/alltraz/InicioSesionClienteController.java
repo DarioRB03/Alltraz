@@ -12,8 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import sample.Cliente;
-import sample.DataBase;
+import com.example.model.Cliente;
+import com.example.model.DataBase;
 
 import java.io.IOException;
 import java.net.URL;
@@ -64,7 +64,7 @@ public class InicioSesionClienteController implements Initializable {
             Cliente cliente;
 
             try {
-                Statement st =  connexion.createStatement();
+                Statement st = connexion.createStatement();
                 ResultSet rs = st.executeQuery(consulta);
 
                 if (!rs.next()) {
@@ -83,7 +83,7 @@ public class InicioSesionClienteController implements Initializable {
                     Alert a = new Alert(Alert.AlertType.CONFIRMATION);
                     a.setHeaderText(null);
                     a.setTitle("Aviso");
-                    a.setContentText("Login existoso \n"+cliente.mostrarUsuario());
+                    a.setContentText("Login existoso \n" + cliente.mostrarUsuario());
                     a.showAndWait();
 
                     ventanaInformacionProducto();
@@ -97,7 +97,7 @@ public class InicioSesionClienteController implements Initializable {
         }
     }
 
-    public void ventanaInformacionProducto(){
+    public void ventanaInformacionProducto() {
         try {
             Parent pane = FXMLLoader.load(getClass().getResource("InformacionProducto-View.fxml"));
 
@@ -111,6 +111,7 @@ public class InicioSesionClienteController implements Initializable {
             Logger.getLogger(com.example.alltraz.HelloController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     @FXML
     public void click_Registrarse(ActionEvent actionEvent) {
         try {

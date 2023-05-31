@@ -3,23 +3,25 @@ package com.example.alltraz;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import sample.Empresa;
+import com.example.model.DataBase;
+import com.example.model.Empresa;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class AdminController {
+public class AdminController implements Initializable {
     @javafx.fxml.FXML
     private TextField txFiltrarEmpresa;
     @javafx.fxml.FXML
@@ -40,86 +42,102 @@ public class AdminController {
     private TableColumn Identificacion;
     @javafx.fxml.FXML
     private TableColumn Password;
-
-    private ObservableList<Empresa> empresas = FXCollections.observableArrayList();;
-    private ObservableList<Empresa> filtroempresas;
     @javafx.fxml.FXML
-    private TableView tabla;
-
+    private TableView<Empresa> tabla;
     private Empresa empresa;
     @javafx.fxml.FXML
     private AnchorPane rootPane;
 
-    public void initialize(URL url, ResourceBundle rb){
-        this.empresas = FXCollections.observableArrayList();
-        filtroempresas = FXCollections.observableArrayList();
 
-        this.tabla.setItems(empresas);
-
-        this.ID.setCellFactory(new PropertyValueFactory("ID"));
-        this.tipo.setCellFactory(new PropertyValueFactory("TIPO"));
-        this.Nombre.setCellFactory(new PropertyValueFactory("Nombre"));
-        this.Identificacion.setCellFactory(new PropertyValueFactory("Identificacion"));
-        this.Password.setCellFactory(new PropertyValueFactory("Password"));
-
-    }
-    @javafx.fxml.FXML
-    public void filtrarEmpresa(KeyEvent event) {
+    public void initialize(URL url, ResourceBundle rb) {
+        llenarTabla();
     }
 
-    @javafx.fxml.FXML
-    public void filtrarCliente(KeyEvent event) {
+    public ObservableList<Empresa> getEmpresas() {
+        var sql = "Select * From empresa";
+        ObservableList<Empresa> empresasList = FXCollections.observableArrayList();
+
+        try {
+            DataBase db = new DataBase();
+            Connection connexion = db.obtenerConexion();
+            PreparedStatement st = db.obtenerConexion().prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+
+            while (rs.next()) {
+
+                Integer id_ = Integer.valueOf(rs.getString("Id_empresa"));
+                String tip = rs.getString("Tipo");
+                String ne = rs.getString("NombreEmpresa");
+                String cif = rs.getString("Cif");
+                String pas = rs.getString("Contraseña");
+                Empresa e = new Empresa( id_,tip,ne,cif,pas);
+                empresasList.add(e);
+
+            }
+            rs.close();
+            st.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return empresasList;
     }
 
+    public void llenarTabla(){
+        ObservableList<Empresa>lista = getEmpresas();
+
+        for (Empresa list: lista) {
+            System.out.println(list.getUsername_empresa() + list.getTipo() + list.getID() + list.getCif() + list.getPassword_empresa());
+        }
+
+
+        this.ID.setCellValueFactory(new PropertyValueFactory("ID"));
+        this.tipo.setCellValueFactory(new PropertyValueFactory("tipo"));
+        this.Nombre.setCellValueFactory(new PropertyValueFactory("username_empresa"));
+       this.Identificacion.setCellValueFactory(new PropertyValueFactory("cif"));
+       this.Password.setCellValueFactory(new PropertyValueFactory("password_empresa"));
+
+       /* this.ID.setCellValueFactory(new PropertyValueFactory("id"));
+        this.tipo.setCellValueFactory(new PropertyValueFactory("tipo"));
+        this.Nombre.setCellValueFactory(new PropertyValueFactory("username"));
+        this.Identificacion.setCellValueFactory(new PropertyValueFactory("cif"));
+        this.Password.setCellValueFactory(new PropertyValueFactory("pass"));
+*/
+        ObservableList<Empresa> p = FXCollections.observableArrayList();
+
+       // p.add(new Empresa2(1,"cif","u","n","p"));
+
+        tabla.setItems(lista);
+    }
     @javafx.fxml.FXML
     public void modificar_persona(ActionEvent actionEvent) {
+        try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("VentanaModificar-View.fxml"));
+            this.rootPane.getChildren().setAll(pane);
+
+        } catch (IOException ex) {
+            Logger.getLogger(com.example.alltraz.HelloController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @javafx.fxml.FXML
     public void agregar_persona(ActionEvent actionEvent) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("VentanaAgregar-View.fxml"));
-            Parent root = loader.load();
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("VentanaAgregar-View.fxml"));
+            this.rootPane.getChildren().setAll(pane);
 
-            VentanaAgregarController controlador = loader.getController();
-            controlador.initAtributes(empresas,empresa);
-
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setScene(scene);
-            stage.showAndWait();
-
-            Empresa e = controlador.getEmpresa();
-            if(e != null){
-                this.empresas.add(e);
-                this.tabla.refresh();
-            }
-        }
-        catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (IOException ex) {
+            Logger.getLogger(com.example.alltraz.HelloController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @javafx.fxml.FXML
     public void eliminar_persona(ActionEvent actionEvent) {
-        Empresa e = (Empresa) this.tabla.getSelectionModel().getSelectedItems();
+        try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("VentanaEliminar-View.fxml"));
+            this.rootPane.getChildren().setAll(pane);
 
-        if(e == null){
-            Alert a = new Alert(Alert.AlertType.ERROR);
-            a.setHeaderText(null);
-            a.setTitle("Error");
-            a.setContentText("Debes seleccionar una empresa");
-            a.showAndWait();
-        }else{
-            this.empresas.remove(e);
-            this.tabla.refresh();
-
-            Alert a = new Alert(Alert.AlertType.ERROR);
-            a.setHeaderText(null);
-            a.setTitle("Error");
-            a.setContentText("Se ha borrado una empresa");
-            a.showAndWait();
+        } catch (IOException ex) {
+            Logger.getLogger(com.example.alltraz.HelloController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

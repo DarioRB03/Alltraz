@@ -18,7 +18,7 @@ public class HelloApplication extends Application {
         Parent root = fxmlLoader.load(getClass().getResource("Inicio-View.fxml"));
         Scene scene1 = new Scene(root);
         stage.setTitle("ALLTRAZ");
-        stage.getIcons().add(new Image("C:\\Users\\Darío\\Desktop\\ProyectoIntegrado1\\Programa Java\\ALLTRAZ\\src\\main\\resources\\com\\example\\Images\\Miproyecto.png"));
+        stage.getIcons().add(new Image("C:\\Users\\eduar\\Desktop\\ALLTRAZ\\src\\main\\resources\\com\\example\\Images\\Miproyecto.png"));
         stage.setScene(scene);
         stage.show();
     }

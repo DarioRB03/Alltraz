@@ -5,23 +5,18 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import javafx.stage.Window;
-import sample.Cliente;
-import sample.DataBase;
+import com.example.model.DataBase;
 import sample.Empresa;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.security.cert.PolicyNode;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -34,8 +29,6 @@ public class VentanaAgregarController implements Initializable {
     private TextField ID;
     @javafx.fxml.FXML
     private TextField CIF;
-    @javafx.fxml.FXML
-    private TextField USERNAME;
     @javafx.fxml.FXML
     private TextField PASSWORD;
     @javafx.fxml.FXML
@@ -64,13 +57,12 @@ public class VentanaAgregarController implements Initializable {
 
     @javafx.fxml.FXML
     public void btn_LISTO(ActionEvent actionEvent) {
-        String user = USERNAME.getText().trim();
         String nombreEmpresa = ID.getText().trim();
         String cif = CIF.getText().trim();
         String pass = PASSWORD.getText().trim();
         String ruta = txtRuta.getText().trim();
 
-        if (user.equals("") || pass.equals("") || nombreEmpresa.equals("") || cif.equals("") || ruta.equals("")) {
+        if (pass.equals("") || nombreEmpresa.equals("") || cif.equals("") || ruta.equals("")) {
             Alert a = new Alert(Alert.AlertType.ERROR);
             a.setHeaderText(null);
             a.setTitle("Error");
@@ -81,7 +73,7 @@ public class VentanaAgregarController implements Initializable {
             Connection connexion = db.obtenerConexion();
 
 
-            String consulta = "INSERT INTO empresa (Cif,Contraseña,Icono,NombreEmpresa) VALUES (?,?,?,?)";
+            String consulta = "INSERT INTO empresa (Cif,Contraseña,ImagenEmpresa,NombreEmpresa) VALUES (?,?,?,?)";
             Empresa empresa = new Empresa();
 
             try {
@@ -89,7 +81,7 @@ public class VentanaAgregarController implements Initializable {
                 st.setString(1,cif);
                 st.setString(2,pass);
                 st.setString(3,ruta);
-                st.setString(3,nombreEmpresa);
+                st.setString(4,nombreEmpresa);
 
                 int filasNuevas = st.executeUpdate();
 
@@ -113,6 +105,13 @@ public class VentanaAgregarController implements Initializable {
 
     @javafx.fxml.FXML
     public void click_ATRAS(ActionEvent actionEvent) {
+        try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("Inicio-View.fxml"));
+            this.rootPane.getChildren().setAll(pane);
+
+        } catch (IOException ex) {
+            Logger.getLogger(com.example.alltraz.HelloController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @javafx.fxml.FXML

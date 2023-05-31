@@ -1,12 +1,11 @@
 package com.example.alltraz;
 
+import com.example.model.Empresa;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import sample.Producto;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 public class RegistroProductoController {
@@ -50,7 +49,7 @@ public class RegistroProductoController {
         Optional<ButtonType> result = a.showAndWait();
 
         if(result.get() == ButtonType.OK){
-            Producto producto = new Producto(lote, caracteristicas, fsal, flleg, fcos, fplant);
+            Empresa.Producto producto = new Empresa.Producto(lote, caracteristicas, fsal, flleg, fcos, fplant);
             /*
             GUARDAR EN BASE DE DATOS
 
