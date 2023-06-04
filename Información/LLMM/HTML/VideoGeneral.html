@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
+    <title> General </title>
+    <link rel="stylesheet" type="text/css" href="../CSS/General.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Video.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <link rel="icon" type="image/x-icon" href="../Imagenes/Miproyecto.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+</head>
+<body>
+
+<!--Menú Desplegable-->
+    <img src="../Imagenes/Menu/menu-regular-24.png" class="menu" alt="Imagen Menu">
+ <nav class="menu-navegador" style="z-index: 20;" id="anchoMenu">
+  <ul class="list">
+    <li class="list__item">
+      <div class="list__button">
+        <img src="../Imagenes/Menu/home.svg" class="list__img" alt="Imagen Inicio">
+          <a href="../Index.html" class="nav__link">Inicio</a>
+      </div>
+    </li>
+
+    <li id="boton-secciones" class="list__item list__item--click">
+      <div class="list__button list__button--click">
+          <img src="../Imagenes/Menu/youtube.svg" class="list__img" alt="Youtube">
+          <a href="https://www.youtube.com/@xuquercentreeducatiu6070" class="nav__link">Youtube - Demo</a>
+          <img src="../Imagenes/Menu/arrow.svg" class="list__arrow" alt="Arrow">
+      </div>
+
+      <ul class="list__show">
+          <li class="list__inside">
+              <a href="../HTML/VideoGeneral.html" class="nav__link nav__link--inside">General</a>
+          </li>
+      </ul>
+  </li>
+  
+    <li class="list__item">
+      <div class="list__button">
+        <img src="../Imagenes/Menu/aboutus.svg" class="list__img" alt="Imagen Usuario Premium">
+          <a href="../HTML/InfoEquipo.html" class="nav__link">Sobre Nosotros</a>
+      </div>
+    </li>
+
+    <li class="list__item">
+      <div class="list__button">
+        <img src="../Imagenes/Menu/contact.svg" class="list__img" alt="Imagen Contacto">
+          <a href="../HTML/Contacto.html" class="nav__link">Contacto</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+<header>
+  <!-- Menu Navegación -->
+  <div id="divImagenPortada" class="colorFondo">
+    <nav class="navbar navbar-expand-lg shadow-md py-2 bg-white relative flex items-center w-full justify-between" >
+      <div class="px-6 w-full flex flex-wrap items-center justify-between" id="paddingPortada">
+          <div class="flex items-center">
+              <a class="navbar-brand text-blue-600" href="../Index.html">
+              <img style="width: 60px;" src="../Imagenes/Miproyecto.png" class="block w-full" alt="..." />
+              </a>
+          </div>
+          <div id="espaciado-nav">
+            <div class="flex items-center lg:ml-auto">
+                
+            </div>
+          </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <h1>VIDEO GALLERY</h1>
+    <div class="row">
+        <div class="col">
+            <div class="feature-img">
+                <img src="../Imagenes/configGeneral.jpg" style="width: 100%;" alt="configgeneral">
+                <img src="../Imagenes/boton-de-play.png" alt="botonplay" class="play-btn" onclick="playVideo('!video!')">
+            </div>
+        </div>
+        <div>
+        </div>
+    </div>
+</div>
+
+<div class="video-player" id="videoPlayer">
+  <video style="width: 100%;" controls autoplay id="myVideo">
+    <source src="" type="video/mp4">
+  </video>
+  <img src="../Imagenes/close.png" alt="cerrar" class="close-btn" onclick="stopVideo()">
+</div>
+
+</main>
+
+<!-- Footer Contacto -->
+<footer id="contacto">
+  <div class="contenedor footer-content" id="alignAbajofooter">
+      <div class="contact" id="alignContacto">
+          <h2 class="brand">ALLTRAZ</h2>
+          <p>Trazabilidad de la A la Z</p>
+      </div>
+
+      <a href="../Index.html"><img class="icono-footer" src="../Imagenes/Miproyecto.png" alt="Logo"></a>
+      
+      <div class="redes-sociales" id="espaciadoLogos">
+        <a class="red-social-icono movimiento" id="instagram" href="https://www.instagram.com/alltraz_oficial/">
+          <i class="bx bxl-instagram "></i>
+        </a>
+      
+        <a class="red-social-icono movimiento" id="twitter" href="https://twitter.com/alltraz">
+            <i class="bx bxl-twitter"></i>
+        </a>
+
+        <a class="red-social-icono movimiento" id="github" href="https://github.com/DarioRB03/Alltraz">
+            <i class='bx bxl-github'></i>
+        </a>
+
+        <a class="red-social-icono movimiento" id="youtube" href="https://www.youtube.com/@xuquercentreeducatiu6070">
+            <i class='bx bxl-youtube'></i>       
+        </a>
+
+        <a class="red-social-icono movimiento" id="code" href="">
+            <i class="bx bx-code-alt "></i>
+        </a>
+      </div>
+  </div>
+
+<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+© 2023 Copyright:
+<a class="text-white" id="alignFooter" href="../Index.html">ALLTRAZ</a>
+</div>
+
+</footer>
+
+<script src="../JS/Video.js"></script>
+<script src="../JS/Menu.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
+</body>
+
+
+
+</html>

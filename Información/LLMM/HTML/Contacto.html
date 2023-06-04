@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="witdh=device-width, initial-scale=1.0">
+    <title> Contacto </title>
+    <link rel="stylesheet" type="text/css" href="../CSS/General.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/Contacto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <link rel="icon" type="image/x-icon" href="../Imagenes/Miproyecto.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+</head>
+<body>
+
+<!--Menú Desplegable-->
+    <img src="../Imagenes/Menu/menu-regular-24.png" class="menu" alt="Imagen Menu">
+    <nav class="menu-navegador" style="z-index: 20;" id="anchoMenu">
+      <ul class="list">
+        <li class="list__item">
+          <div class="list__button">
+            <img src="../Imagenes/Menu/home.svg" class="list__img" alt="Imagen Inicio">
+              <a href="../Index.html" class="nav__link">Inicio</a>
+          </div>
+        </li>
+
+        <li id="boton-secciones" class="list__item list__item--click">
+          <div class="list__button list__button--click">
+              <img src="../Imagenes/Menu/youtube.svg" class="list__img" alt="">
+              <a href="https://www.youtube.com/@xuquercentreeducatiu6070" class="nav__link">Youtube - Demostraciones</a>
+              <img src="../Imagenes/Menu/arrow.svg" class="list__arrow" alt="">
+          </div>
+
+      <ul class="list__show">
+          <li class="list__inside">
+              <a href="../HTML/VideoGeneral.html" class="nav__link nav__link--inside">VideoTutorial</a>
+          </li>
+          </li>
+      </ul>
+  </li>
+  
+    <li class="list__item">
+      <div class="list__button">
+        <img src="../Imagenes/Menu/aboutus.svg" class="list__img" alt="Imagen Usuario Premium">
+          <a href="../HTML/InfoEquipo.html" class="nav__link">Sobre Nosotros</a>
+      </div>
+    </li>
+
+    <li class="list__item">
+      <div class="list__button">
+        <img src="../Imagenes/Menu/contact.svg" class="list__img" alt="Imagen Contacto">
+          <a href="../HTML/Contacto.html" class="nav__link">Contacto</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+<header>
+<!-- Menu Navegación -->
+<div id="divImagenPortada" class="colorFondo">
+  <nav class="navbar navbar-expand-lg shadow-md py-2 bg-white relative flex items-center w-full justify-between" >
+    <div class="px-6 w-full flex flex-wrap items-center justify-between" id="paddingPortada">
+      <div class="flex items-center">
+          <a class="navbar-brand text-blue-600" href="../index.html">
+          <img style="width: 60px;" src="../Imagenes/Miproyecto.png" class="block w-full" alt="..." />
+          </a>
+      </div>
+
+      <div id="espaciado-nav">
+          <div class="flex items-center lg:ml-auto">
+          </div>
+      </div>
+    </div>
+  </nav>
+</div>
+</header>
+
+<main>
+
+<!-- Contacto Formulario  -->
+<div class="container my-24 px-6 mx-auto">
+  <section class="mb-32 text-gray-800">
+
+    <div class="relative overflow-hidden bg-no-repeat bg-cover"
+      style="background-position: 50%; background-image: url('https://mdbootstrap.com/img/new/textures/full/284.jpg'); height: 300px;">
+    </div>
+    <div class="container text-gray-800 px-4 md:px-12">
+      <div class="block rounded-lg shadow-lg py-10 md:py-12 px-2 md:px-6"
+        style="margin-top: -100px; background: hsla(0, 0%, 100%, 0.8); backdrop-filter: blur(30px);">
+        <div class="flex flex-wrap">
+          <div class="grow-0 shrink-0 basis-auto w-full xl:w-5/12 px-3 lg:px-6 mb-12 xl:mb-0">
+            <form>
+              <div class="form-group mb-6">
+                <input type="text" class="form-control block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7"
+                  placeholder="Nombre">
+              </div>
+              <div class="form-group mb-6">
+                <input type="email" class="form-control block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput8"
+                  placeholder="Correo Electronico">
+              </div>
+              <div class="form-group mb-6">
+                <textarea class="
+                form-control
+                block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+              " id="exampleFormControlTextarea13" rows="3" placeholder="Observaciones"></textarea>
+              </div>
+              <div class="form-group form-check text-center mb-6">
+                <input type="checkbox"
+                  class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
+                  id="exampleCheck87" checked>
+                <label class="form-check-label inline-block text-gray-800" for="exampleCheck87">Acepto terminos y condificones.</label>
+              </div>
+              <button type="submit" class="
+              w-full
+              px-6
+              py-2.5
+              bg-blue-600
+              text-white
+              font-medium
+              text-xs
+              leading-tight
+              uppercase
+              rounded
+              shadow-md
+              hover:bg-blue-700 hover:shadow-lg
+              focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+              active:bg-blue-800 active:shadow-lg
+              transition
+              duration-150
+              ease-in-out">Enviar</button>
+            </form>
+          </div>
+          <div class="grow-0 shrink-0 basis-auto w-full xl:w-7/12">
+            <div class="flex flex-wrap">
+              <div class="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                <div class="flex items-start">
+                  <div class="shrink-0">
+                    <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="headset" class="w-5 text-white"
+                        role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                          d="M192 208c0-17.67-14.33-32-32-32h-16c-35.35 0-64 28.65-64 64v48c0 35.35 28.65 64 64 64h16c17.67 0 32-14.33 32-32V208zm176 144c35.35 0 64-28.65 64-64v-48c0-35.35-28.65-64-64-64h-16c-17.67 0-32 14.33-32 32v112c0 17.67 14.33 32 32 32h16zM256 0C113.18 0 4.58 118.83 0 256v16c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16v-16c0-114.69 93.31-208 208-208s208 93.31 208 208h-.12c.08 2.43.12 165.72.12 165.72 0 23.35-18.93 42.28-42.28 42.28H320c0-26.51-21.49-48-48-48h-32c-26.51 0-48 21.49-48 48s21.49 48 48 48h181.72c49.86 0 90.28-40.42 90.28-90.28V256C507.42 118.83 398.82 0 256 0z">
+                        </path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="grow ml-6">
+                    <p class="font-bold mb-1">Soporte Tecnico</p>
+                    <p class="text-gray-500">alltraz_oficial@gmail.com</p>
+                    <p class="text-gray-500">658972598</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                <div class="flex items-start">
+                  <div class="shrink-0">
+                    <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                      <img src="../Imagenes/floridalogo.png" alt="florifalogo">
+                    </div>
+                  </div>
+                  <div class="grow ml-6">
+                    <p class="font-bold mb-1">Centro Educativo Xuqer</p>
+                    <p class="text-gray-500"><a href="https://www.axuquer.es">axuquer.es</a></p>
+                    <p class="text-gray-500">info.xuquer@axuquer.es</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                <div class="flex align-start">
+                  <div class="shrink-0">
+                    <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                      <img src="../Imagenes/Menu/youtube.svg" alt="youtubelogo"> 
+                    </div>
+                  </div>
+                  <div class="grow ml-6">
+                    <p class="font-bold mb-1">Youtube</p>
+                    <p class="text-gray-500"><a href="https://www.youtube.com/channel/UCGflAdTCGFpYf2Ayjhg4GIA">Alltraz_oficial</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
+                <div class="flex align-start">
+                  <div class="shrink-0">
+                    <div class="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center" style="padding: 0px; width: 70px;">
+                      <img src="../Imagenes/frame.png" alt="codigoqr">
+                    </div>
+                  </div>
+                  <div class="grow ml-6">
+                    <p class="font-bold mb-1">Video Presentacion</p>
+                    <p class="text-gray-500"><a href="https://www.youtube.com/channel/UCGflAdTCGFpYf2Ayjhg4GIA">Presentacion Alltraz</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<!-- Footer Contacto -->
+<footer id="contacto">
+  <div class="contenedor footer-content" id="alignAbajofooter">
+      <div class="contact" id="alignContacto">
+          <h2 class="brand">ALLTRAZ</h2>
+          <p>Trazabilidad de la A la Z</p>
+      </div>
+
+      <a href="../Index.html"><img class="icono-footer" src="../Imagenes/Miproyecto.png" alt="Logo"></a>
+      
+      <div class="redes-sociales" id="espaciadoLogos">
+        <a class="red-social-icono movimiento" id="instagram" href="https://www.instagram.com/alltraz_oficial/">
+          <i class="bx bxl-instagram "></i>
+        </a>
+      
+        <a class="red-social-icono movimiento" id="twitter" href="https://twitter.com/alltraz">
+            <i class="bx bxl-twitter"></i>
+        </a>
+
+        <a class="red-social-icono movimiento" id="github" href="https://github.com/DarioRB03/Alltraz">
+            <i class='bx bxl-github'></i>
+        </a>
+
+        <a class="red-social-icono movimiento" id="youtube" href="https://www.youtube.com/@xuquercentreeducatiu6070">
+            <i class='bx bxl-youtube'></i>       
+        </a>
+
+        <a class="red-social-icono movimiento" id="code" href="">
+            <i class="bx bx-code-alt "></i>
+        </a>
+      </div>
+  </div>
+
+<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+© 2023 Copyright:
+<a class="text-white" id="alignFooter" href="../Index.html"> ALLTRAZ</a>
+</div>
+
+</footer>
+
+<script src="../JS/Menu.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+
+</body>
+
+</html>

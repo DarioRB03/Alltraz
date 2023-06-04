@@ -60,7 +60,7 @@ header{
 }
 
 #idLogin{
-	background: linear-gradient(to right bottom, #9e66c6, #6027e1);
+	background: linear-gradient(to right bottom, #5de0e6, #004aad);
 }
 
 /* Menú Desplegable */
@@ -265,7 +265,7 @@ header{
 
   #contenido{
 	flex: 1;
-	margin-top: 1%;
+	margin-top: -1%;
 	margin-left: 10%;
 	margin-right: 20%;
   }

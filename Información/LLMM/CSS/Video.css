@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  body{
+    background: rgb(80,78,255);
+    background: linear-gradient(90deg, #46cef8 0%, #004aad 60%);  }
+  
+  .container{
+    width: 80%;
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+  
+  .container h1{
+    margin-left: 28%;
+    color: #fff;
+    font-size: 44px;
+  }
+  
+  .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 51%;
+  }
+  
+  .col{
+    flex-basis: 50%;
+    min-width: 250px;
+  }
+  
+  .feature-img{
+    width: 83%;
+    margin: auto;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  
+  .small-img-row{
+    display: flex;
+    background: #efefef;
+    margin: 20px 0;
+    align-items: center;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 85%;
+  }
+  
+  .small-img{
+    position: relative;
+  }
+  
+  .small-img img{
+    width: 150px;
+  }
+  
+  .small-img .play-btn{
+    width: 35px;
+  }
+  
+  .small-img-row p{
+    margin-left: 20px;
+    color: #707070;
+    line-height: 22px;
+    font-size: 15px;
+  }
+  
+  .play-btn{
+    width: 60px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  
+  .video-player{
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 38%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+  
+  video:focus{
+   outline: none;
+  }
+
+  #myVideo{
+      margin-top: 20%;
+  }
+  
+  .close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    margin-top: 20%;
+    cursor: pointer;
+  }
+
+
+
+  /*
+Móvil pequeño (LISTO FALTAA EL TÍTULO)
+*/
+@media only screen and (min-width: 355px) and (max-width: 640px){
+
+}
+
+
+
+
+/*
+Móvil mediano (LISTA FALTA TÍTULO)
+*/
+@media only screen and (min-width: 359px) and (max-width: 667px){
+
+}
+
+
+
+
+
+
+
+
+
+/*
+Móvil grande (LISTA FALTA TÍTULO)
+*/
+@media only screen and (min-width: 720px) and (max-width: 1280px){
+
+}
+
+
+
+
+
+
+
+/*
+Tablet orientation landscape (LISTO FALTA EL TÍTULO)
+*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
+  
+}
